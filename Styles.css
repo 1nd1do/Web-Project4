@@ -1,0 +1,453 @@
+/* Example of vendor prefixes for flexbox */
+.container {
+  display: -webkit-box;  /* Old Safari and iOS */
+  display: -moz-box;     /* Old Firefox */
+  display: -ms-flexbox;  /* IE 10 */
+  display: -webkit-flex; /* Newer Safari */
+  display: flex;         /* Standard */
+}
+/* General Reset */
+body, h1, h2, h3, p, a {
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  font-family: 'Arial', sans-serif; /* Default font */
+}
+
+/* Layout & Colors */
+body {
+  background-color: #000000; /* Main background color */
+  color: #fefefe; /* Default text color */
+}
+
+/* Header Section */
+header {
+  background-color: #111; /* Dark background for header */
+  color: white; /* White text in header */
+  padding: 20px; /* Padding for header */
+}
+
+.navbar {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  max-width: 1200px; /* Max width for navbar */
+  margin: 0 auto; /* Center navbar */
+}
+
+.navbar .logo h1 {
+  font-size: 2.5rem; /* Logo font size */
+  font-weight: bold; /* Bold logo text */
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Flexbox for links */
+}
+
+.nav-links li {
+  margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1rem; /* Link font size */
+}
+
+.nav-links a:hover {
+  color: #e03a1d; /* Change color on hover */
+}
+
+/* Hero Section */
+#hero {
+  display: flex; /* Flexbox for hero */
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Space between content */
+  padding: 100px 20px; /* Padding for hero section */
+  background-image: url('images/DARK ROOM.jpg'); /* Background image */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  color: white; /* Text color in hero */
+  height: 600px; /* Height of hero section */
+}
+
+.hero-content {
+  max-width: 500px; /* Limit width for content */
+  z-index: 1; /* Ensure content is above background */
+}
+
+.hero-content h2 {
+  font-size: 3rem; /* Large heading size */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.hero-content p {
+  font-size: 1.3rem; /* Paragraph font size */
+  margin-bottom: 20px; /* Space below paragraph */
+}
+
+/* Button Styles */
+.btn {
+  background-color: #e03a1d; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Padding for button */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1rem; /* Button font size */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* About Section */
+#about {
+  display: flex; /* Flexbox for layout */
+  justify-content: center; /* Center content */
+  padding: 80px 20px; /* Padding for section */
+}
+
+.container {
+  display: flex; /* Flexbox for container */
+  max-width: 1200px; /* Max width for container */
+  margin: 0 auto; /* Center container */
+  justify-content: space-between; /* Space between items */
+}
+
+/* About Image and Content */
+.about-image {
+  width: 50%; /* Half width for image */
+}
+
+.about-content {
+  width: 50%; /* Half width for content */
+  padding-left: 40px; /* Padding on left */
+}
+
+.about-content h2 {
+  font-size: 2.5rem; /* Heading size for about */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+/* Services Section */
+#services {
+  background-color: #120000; /* Dark background for services */
+  padding: 60px 20px; /* Padding for section */
+  text-align: center; /* Center text */
+}
+
+#services h2 {
+  font-size: 2.5rem; /* Heading size for services */
+  margin-bottom: 40px; /* Space below heading */
+}
+
+.services-list {
+  display: flex; /* Flexbox for service items */
+  justify-content: center; /* Center items */
+  gap: 40px; /* Space between items */
+}
+
+/* Individual Service Styles */
+.service {
+  background-color: #000000; /* Background for service */
+  padding: 30px; /* Padding inside service */
+  text-align: center; /* Center text */
+  border-radius: 10px; /* Rounded corners */
+  width: 280px; /* Fixed width for service */
+}
+
+.service-img {
+  width: 100%; /* Image takes full width */
+  border-radius: 10px; /* Rounded corners for image */
+  margin-bottom: 20px; /* Space below image */
+}
+
+.service h3 {
+  font-size: 1.8rem; /* Heading size for service */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.service p {
+  font-size: 1rem; /* Paragraph font size */
+  margin-bottom: 20px; /* Space below paragraph */
+}
+
+/* Footer Section */
+footer {
+  text-align: center; /* Center text in footer */
+  background-color: #111; /* Dark background for footer */
+  color: white; /* White text in footer */
+  padding: 20px; /* Padding for footer */
+}
+
+/* Trainers Section */
+#trainers {
+  text-align: center; /* Center text for trainers */
+  padding: 40px 20px; /* Padding for section */
+  background-color: #000000; /* Background color */
+}
+
+#trainers h2 {
+  font-size: 2rem; /* Heading size for trainers */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+#trainers p {
+  font-size: 1rem; /* Paragraph font size */
+  margin-bottom: 30px; /* Space below paragraph */
+  color: #ffffff; /* Text color */
+}
+
+/* Trainers List Layout */
+.trainers-list {
+  display: flex; /* Flexbox for trainer items */
+  flex-direction: column; /* Column layout */
+  gap: 30px; /* Space between items */
+}
+
+.trainer {
+  display: flex; /* Flexbox for trainer */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between items */
+  padding: 20px; /* Padding for trainer */
+  border: 1px solid #ddd; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #000000; /* Background color */
+}
+
+/* Trainer Image */
+.trainer-img {
+  width: 150px; /* Fixed width for image */
+  height: 150px; /* Fixed height for image */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Cover image */
+  border: 2px solid #eee; /* Border for image */
+}
+
+.trainer-info {
+  flex: 1; /* Allow flex grow */
+  text-align: left; /* Align text to left */
+}
+
+.trainer-info h3 {
+  font-size: 1.5rem; /* Heading size for trainer info */
+  color: #ffffff; /* White text */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.trainer-info p {
+  font-size: 1rem; /* Paragraph font size */
+  color: #666; /* Text color */
+  line-height: 1.5; /* Line height for readability */
+}
+
+/* Class Types Section */
+#class-types {
+  text-align: center; /* Center text */
+  padding: 40px 20px; /* Padding for section */
+  background-color: #000000; /* Background color */
+}
+
+#class-types h2 {
+  font-size: 2rem; /* Heading size for class types */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+#class-types p {
+  font-size: 1rem; /* Paragraph font size */
+  margin-bottom: 30px; /* Space below paragraph */
+  color: #fffcfc; /* Text color */
+}
+
+/* Class List Layout */
+.class-list {
+  display: flex; /* Flexbox for class items */
+  flex-direction: column; /* Column layout */
+  gap: 30px; /* Space between items */
+}
+
+.class {
+  display: flex; /* Flexbox for class */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between items */
+  padding: 20px; /* Padding for class */
+  border: 1px solid #ddd; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #000000; /* Background color */
+}
+
+.class-img {
+  width: 150px; /* Fixed width for image */
+  height: 150px; /* Fixed height for image */
+  border-radius: 8px; /* Rounded corners for image */
+  object-fit: cover; /* Cover image */
+  border: 2px solid #eee; /* Border for image */
+}
+
+.class-info {
+  flex: 1; /* Allow flex grow */
+  text-align: left; /* Align text to left */
+}
+
+.class-info h3 {
+  font-size: 1.5rem; /* Heading size for class info */
+  color: #ffffff; /* White text */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.class-info p {
+  font-size: 1rem; /* Paragraph font size */
+  color: #000000; /* Text color */
+  line-height: 1.5; /* Line height for readability */
+}
+
+/* Schedule Section Styling */
+#class-schedule {
+  text-align: center; /* Center text */
+  padding: 40px 20px; /* Padding for section */
+  background-color: #000000; /* Background color */
+}
+
+#class-schedule h2 {
+  font-size: 2rem; /* Heading size for schedule */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+#class-schedule p {
+  font-size: 1rem; /* Paragraph font size */
+  margin-bottom: 20px; /* Space below paragraph */
+  color: #ffffff; /* Text color */
+}
+
+.schedule h3 {
+  font-size: 1.5rem; /* Heading size for schedule */
+  margin-bottom: 15px; /* Space below heading */
+  color: #f5f5f5; /* Light text color */
+}
+
+/* Table Styles */
+table {
+  width: 100%; /* Full width table */
+  max-width: 800px; /* Max width for table */
+  margin: 0 auto 20px; /* Center table */
+  border-collapse: collapse; /* Collapse borders */
+  background-color: #000000; /* Background color */
+  border: 1px solid #000000; /* Border for table */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+}
+
+table thead {
+  background-color: #333; /* Background for table header */
+  color: #ffffff; /* Text color for header */
+}
+
+table th, table td {
+  padding: 15px; /* Padding for cells */
+  text-align: center; /* Center text */
+  border: 1px solid #000000; /* Border for cells */
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #000000; /* Background for even rows */
+}
+
+table tbody tr:hover {
+  background-color: #970000; /* Change color on hover */
+}
+
+/* Reserve Spot Button */
+.reserve-spot {
+  margin-top: 20px; /* Space above button */
+}
+
+.reserve-spot .btn {
+  display: inline-block; /* Inline block for button */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 1rem; /* Font size for button */
+  color: #fff; /* Button text color */
+  background-color: #007bff; /* Button background color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Transition effect */
+}
+
+.reserve-spot .btn:hover {
+  background-color: #9b3d06; /* Change color on hover */
+}
+
+/* Pricing Section */
+#pricing {
+  text-align: center; /* Center text */
+  padding: 40px 20px; /* Padding for section */
+  background-color: #000000; /* Background color */
+}
+
+#pricing h2 {
+  font-size: 2rem; /* Heading size for pricing */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+#pricing p {
+  font-size: 1rem; /* Paragraph font size */
+  margin-bottom: 30px; /* Space below paragraph */
+  color: #ffffff; /* Text color */
+}
+
+/* Pricing Options Layout */
+.pricing-options {
+  display: flex; /* Flexbox for pricing options */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center items */
+}
+
+.pricing-option {
+  width: 100%; /* Full width option */
+  max-width: 300px; /* Max width for option */
+  padding: 20px; /* Padding for option */
+  border: 1px solid #ddd; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #000000; /* Background color */
+  text-align: center; /* Center text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+.pricing-option:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.pricing-option h3 {
+  font-size: 1.5rem; /* Heading size for pricing option */
+  color: #ffffff; /* White text */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.pricing-option .price {
+  font-size: 1.25rem; /* Price font size */
+  color: #007bff; /* Price color */
+  margin: 10px 0; /* Margin around price */
+  font-weight: bold; /* Bold price */
+}
+
+.pricing-option p {
+  font-size: 1rem; /* Paragraph font size */
+  color: #ffffff; /* Text color */
+  margin-bottom: 20px; /* Space below paragraph */
+  line-height: 1.5; /* Line height for readability */
+}
+
+.pricing-option .btn {
+  display: inline-block; /* Inline block for button */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 1rem; /* Font size for button */
+  color: #ffffff; /* Button text color */
+  background-color: #007bff; /* Button background color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Transition effect */
+}
+
+.pricing-option .btn:hover {
+  background-color: #b34e00; /* Change color on hover */
+}

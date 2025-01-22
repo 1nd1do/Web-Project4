@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding and meta tag for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    
+    <style>
+        /* Basic styling for body: Centering content, background color */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styling for the container that holds the form */
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        /* Styling for the form header (Signup Form) */
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Styling for individual form groups (labels and inputs) */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Styling for labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Styling for input fields */
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Styling for the submit button */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for the button */
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        /* Styling for error and confirmation messages */
+        #message {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Error message styling */
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        /* Styling for the password hint */
+        .password-hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Styling for password strength bar */
+        .password-strength {
+            margin-top: 5px;
+        }
+
+        /* Different strength levels for password */
+        .password-strength div {
+            height: 5px;
+            border-radius: 4px;
+        }
+
+        .weak {
+            width: 33%;
+            background-color: red;
+        }
+
+        .medium {
+            width: 66%;
+            background-color: orange;
+        }
+
+        .strong {
+            width: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Signup Form</h2>
+        
+        <!-- Signup form with input fields for username, email, password, and confirm password -->
+        <form id="signupForm">
+            <!-- Username Input -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <!-- Password Hint (hidden by default) -->
+                <div class="password-hint" id="passwordHint">
+                    Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.
+                </div>
+                <!-- Password Error Message (initially empty) -->
+                <span id="passwordError" class="error"></span>
+                <!-- Password Strength Indicator -->
+                <div class="password-strength" id="passwordStrength"></div>
+            </div>
+
+            <!-- Confirm Password Input -->
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <!-- Confirm Password Error Message -->
+                <span id="confirmPasswordError" class="error"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Signup</button>
+        </form>
+
+        <!-- Message area for success/error notifications -->
+        <p id="message"></p>
+    </div>
+
+    <script>
+        // Event listener for form submission
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent default form submission
+            
+            // Get input field values
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirmPassword').value;
+            let message = document.getElementById('message');
+            let passwordError = document.getElementById('passwordError');
+            let confirmPasswordError = document.getElementById('confirmPasswordError');
+
+            // Validate the password format
+            let passwordValid = validatePassword(password);
+            if (!passwordValid) {
+                passwordError.textContent = 'Password does not meet the requirements.';
+                return;  // Stop form submission if validation fails
+            } else {
+                passwordError.textContent = '';  // Clear error if password is valid
+            }
+
+            // Check if password and confirm password match
+            if (password !== confirmPassword) {
+                confirmPasswordError.textContent = 'Passwords do not match!';
+                return;
+            } else {
+                confirmPasswordError.textContent = '';  // Clear error if passwords match
+            }
+
+            // Here you can send the form data to the server
+            // For now, we just redirect to the 'ThankYou.html' page
+            window.location.href = 'ThankYou.html';
+
+            message.style.color = 'green';  // Set message color to green
+            message.textContent = 'Signup successful!';  // Show success message
+        });
+
+        // Display password hint when the user focuses on the password input field
+        document.getElementById('password').addEventListener('focus', function () {
+            document.getElementById('passwordHint').style.display = 'block';  // Show hint
+        });
+
+        // Hide password hint when the user moves out of the password input field
+        document.getElementById('password').addEventListener('blur', function () {
+            document.getElementById('passwordHint').style.display = 'none';  // Hide hint
+        });
+
+        // Update password strength indicator as the user types the password
+        document.getElementById('password').addEventListener('input', function () {
+            let password = this.value;
+            let passwordStrength = document.getElementById('passwordStrength');
+            let strength = getPasswordStrength(password);
+
+            passwordStrength.innerHTML = '';  // Clear previous strength bars
+            if (strength) {
+                let strengthBar = document.createElement('div');
+                strengthBar.className = strength;
+                passwordStrength.appendChild(strengthBar);  // Append new strength bar
+            }
+        });
+
+        // Password validation function using regular expression
+        function validatePassword(password) {
+            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return regex.test(password);  // Return true if password matches regex
+        }
+
+        // Password strength detection function
+        function getPasswordStrength(password) {
+            if (password.length < 8) {
+                return 'weak';  // Weak if password length is less than 8
+            }
+            if (password.match(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/)) {
+                return 'strong';  // Strong if password meets all criteria
+            }
+            return 'medium';  // Medium if password is partially strong
+        }
+    </script>
+</body>
+
+</html>
