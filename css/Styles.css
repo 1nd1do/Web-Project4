@@ -61,16 +61,18 @@ header {
 
 /* Hero Section */
 #hero {
-  display: flex; /* Flexbox for hero */
-  align-items: center; /* Center content vertically */
-  justify-content: space-between; /* Space between content */
-  padding: 100px 20px; /* Padding for hero section */
-  background-image: url('images/DARK ROOM.jpg'); /* Background image */
-  background-size: cover; /* Cover the entire section */
-  background-position: center; /* Center the image */
-  color: white; /* Text color in hero */
-  height: 600px; /* Height of hero section */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 20px;
+  background-image: url('../images/DARK ROOM.jpg');
+  background-size: cover; /* Ensures the image fills the area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+  height: 50vh; /* Makes the section fill the entire viewport height */
+  width: 100%; /* Ensures the section spans the full width */
 }
+
 
 .hero-content {
   max-width: 500px; /* Limit width for content */
